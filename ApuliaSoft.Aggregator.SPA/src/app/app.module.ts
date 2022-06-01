@@ -4,11 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AggregatorHomeComponent } from './components/aggregator-home/aggregator-home.component';
 import { AggregatorWorkedHoursComponent } from './components/aggregator-worked-hours/aggregator-worked-hours.component';
 import { AggregationTableColPipe } from './pipes/aggregation-table-col.pipe';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,7 +33,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    //NoopAnimationsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     MatFormFieldModule,

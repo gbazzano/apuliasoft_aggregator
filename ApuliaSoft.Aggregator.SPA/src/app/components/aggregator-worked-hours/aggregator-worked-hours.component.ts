@@ -21,7 +21,7 @@ export class AggregatorWorkedHoursComponent implements OnInit {
 
   employees: Employee[] = [];
   projects: Project[] = [];
-  workedHours: WorkedHours[] = [];
+  workedHours: TranslatedWorkedHours[] = [];
   loadingError: boolean = false;
 
   data: TranslatedWorkedHours[] = [];
@@ -64,14 +64,18 @@ export class AggregatorWorkedHoursComponent implements OnInit {
           this.employees[e.id] = e;
         });
 
-        this.workedHours = res.workedHours;
+        this.workedHours = res.workedHours as TranslatedWorkedHours[];
+
+        this.workedHours.forEach(wh => {
+          if(wh.projectId)
+            wh.project = this.projects[wh.projectId].title;
+    
+          if(wh.employeeId)
+            wh.employee = this.employees[wh.employeeId].name;
+        });
 
         //#region Debugging messages.
-        console.log("PROJECTS ARRAY");
-        console.log(this.projects);
-        console.log("EMPLOYEES ARRAY");
-        console.log(this.employees);
-        console.log("WORKED HOURS ARRAY");
+        console.log("// DEBUG // WORKED HOURS ARRAY");
         console.log(this.workedHours);
         //#endregion
 
@@ -86,20 +90,13 @@ export class AggregatorWorkedHoursComponent implements OnInit {
   }
 
   updateTable() {
-    let filter = this.columnsShown.map(cc => cc.baseData!);
+    let filter = this.columnsShown.map(cc => cc.prop);
 
     this.columnsToDisplay = this.columnsShown.map(cc => cc.prop);
     if (this.columnsToDisplay.length > 0)
       this.columnsToDisplay.push('hours');
-    this.data = ProjectHelper.workedHoursGroup(this.workedHours, filter) as TranslatedWorkedHours[];
 
-    this.data.forEach(wh => {
-      if(wh.projectId)
-        wh.project = this.projects[wh.projectId].title;
-
-      if(wh.employeeId)
-        wh.employee = this.employees[wh.employeeId].name;
-    })
+    this.data = ProjectHelper.workedHoursGroup(this.workedHours, filter);
   }
 
   showCol(col: WorkedHoursColConfig) {

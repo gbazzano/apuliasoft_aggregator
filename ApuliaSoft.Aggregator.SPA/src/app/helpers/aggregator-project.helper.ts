@@ -1,16 +1,13 @@
-import { WorkedHours } from "../models/api/worked-hours.model";
+import { TranslatedWorkedHours } from "../models/internal/translated-worked-hours.model";
 
 export class ProjectHelper {
 
     /// Returns an array of WorkedHours oredered and aggregated by the filters supplied.
-    public static workedHoursGroup(elements: WorkedHours[], filters: string[]) : WorkedHours[] {
-
-        type key = keyof WorkedHours;
-
+    public static workedHoursGroup(elements: TranslatedWorkedHours[], filters: string[]) : TranslatedWorkedHours[] {
         if (filters == null || filters == [])
             return elements;
 
-        this.filteredSort<WorkedHours>(elements, filters);
+        this.filteredSort<TranslatedWorkedHours>(elements, filters);
 
         return this.aggregateWorkHours(elements, filters);
     }
@@ -37,16 +34,16 @@ export class ProjectHelper {
 
 
     /// Aggregates an ALREADY ORDERED list of WorkedHours using the filters elements as properties list.
-    private static aggregateWorkHours(elements: WorkedHours[], filters: string[]): WorkedHours[] {
-        type key = keyof WorkedHours;
+    private static aggregateWorkHours(elements: TranslatedWorkedHours[], filters: string[]): TranslatedWorkedHours[] {
+        type key = keyof TranslatedWorkedHours;
 
-        let result: WorkedHours[] = [];
+        let result: TranslatedWorkedHours[] = [];
         let currPos = 0;
-        let currFilter: WorkedHours | null = null;
-        let tempResult: WorkedHours | null = null;
+        let currFilter: TranslatedWorkedHours | null = null;
+        let tempResult: TranslatedWorkedHours | null = null;
         
         while(currPos < elements.length) {
-            let tempFilter = new WorkedHours();
+            let tempFilter = new TranslatedWorkedHours();
             let isNewGroup = currFilter == null;
 
             filters.forEach(f => {
@@ -62,7 +59,7 @@ export class ProjectHelper {
                 if (tempResult != null)
                     result.push(tempResult);
                 
-                tempResult = new WorkedHours();
+                tempResult = new TranslatedWorkedHours();
 
                 filters.forEach(f => tempResult![f as key] = elements[currPos][f as key] as any);
                 tempResult.hours = 0;
