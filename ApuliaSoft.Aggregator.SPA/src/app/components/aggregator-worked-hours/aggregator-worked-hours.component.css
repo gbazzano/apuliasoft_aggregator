@@ -1,0 +1,29 @@
+:host {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+.chips-container {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.chips-container mat-form-field {
+    flex: 1 1 auto;
+}
+
+.debug-message {
+    color: darkred;
+    font-size: 0.8em;
+}
+
+::ng-deep .mat-form-field-infix {
+    min-height: 32px !important;
+}

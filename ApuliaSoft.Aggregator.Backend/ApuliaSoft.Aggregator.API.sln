@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApuliaSoft.Aggregator.API", "ApuliaSoft.Aggregator.API\ApuliaSoft.Aggregator.API.csproj", "{A1AAC19E-3CA6-43E4-987C-C6840B1CC6B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApuliaSoft.Aggregator.DAL", "ApuliaSoft.Aggregator.DAL\ApuliaSoft.Aggregator.DAL.csproj", "{CFEF4D51-8747-4BE2-AC3F-9F1DC48C2F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApuliaSoft.Aggregator.Domain", "ApuliaSoft.Aggregator.Domain\ApuliaSoft.Aggregator.Domain.csproj", "{604C15DE-E4EE-4956-8933-12EEB7D11C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApuliaSoft.Aggregator.BLL", "ApuliaSoft.Aggregator.BLL\ApuliaSoft.Aggregator.BLL.csproj", "{51AA2B39-0CB5-42FE-AE39-0F5CB5B818BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApuliaSoft.Aggregator.DTO", "ApuliaSoft.Aggregator.DTO\ApuliaSoft.Aggregator.DTO.csproj", "{324D902A-BCCD-4922-8176-59D6A17A7C2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1AAC19E-3CA6-43E4-987C-C6840B1CC6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AAC19E-3CA6-43E4-987C-C6840B1CC6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AAC19E-3CA6-43E4-987C-C6840B1CC6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AAC19E-3CA6-43E4-987C-C6840B1CC6B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEF4D51-8747-4BE2-AC3F-9F1DC48C2F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEF4D51-8747-4BE2-AC3F-9F1DC48C2F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEF4D51-8747-4BE2-AC3F-9F1DC48C2F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEF4D51-8747-4BE2-AC3F-9F1DC48C2F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{604C15DE-E4EE-4956-8933-12EEB7D11C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604C15DE-E4EE-4956-8933-12EEB7D11C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604C15DE-E4EE-4956-8933-12EEB7D11C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604C15DE-E4EE-4956-8933-12EEB7D11C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AA2B39-0CB5-42FE-AE39-0F5CB5B818BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AA2B39-0CB5-42FE-AE39-0F5CB5B818BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AA2B39-0CB5-42FE-AE39-0F5CB5B818BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AA2B39-0CB5-42FE-AE39-0F5CB5B818BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{324D902A-BCCD-4922-8176-59D6A17A7C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324D902A-BCCD-4922-8176-59D6A17A7C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324D902A-BCCD-4922-8176-59D6A17A7C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324D902A-BCCD-4922-8176-59D6A17A7C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C34D122D-4912-46F4-9EF1-38850AD1D3E6}
+	EndGlobalSection
+EndGlobal

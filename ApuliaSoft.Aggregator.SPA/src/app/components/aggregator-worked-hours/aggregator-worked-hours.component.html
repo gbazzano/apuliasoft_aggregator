@@ -1,0 +1,42 @@
+<div *ngIf="!loadingError && data.length > 0">
+    <div class="chips-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Data to map</mat-label>
+            <mat-chip-list #chipList aria-label="Data to map">
+                <mat-chip *ngFor="let column of columnsHidden" (click)="showCol(column)">
+                {{column.title}}
+                </mat-chip>
+            </mat-chip-list>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Data mapped</mat-label>
+            <mat-chip-list #chipList aria-label="Data mapped">
+                <mat-chip *ngFor="let column of columnsShown" (removed)="hideCol(column)">
+                {{column.title}}
+                <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+                </mat-chip>
+            </mat-chip-list>
+        </mat-form-field>
+    </div>
+      
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="column.prop" *ngFor="let column of columnsConfig">
+            <th mat-header-cell *matHeaderCellDef> {{column.title}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[column.prop] | aggregationTableCol:column.type }} </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+    </table>
+
+    <div>
+        <p class="debug-message">* Debugging information will be printed in console.</p>
+    </div>
+</div>
+
+<div *ngIf="loadingError" class="error-message">
+    An error occured while loading the worked hours information.
+</div>
